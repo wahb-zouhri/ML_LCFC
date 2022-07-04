@@ -288,6 +288,8 @@ def get_data(path, sep=';'):
             data = pd.read_excel(path, header=0)               
             
         return data
+    else:
+        return pd.DataFrame(data = 10*np.random.rand(30,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
 
 intro = st.container()
 dataset = st.container()
@@ -295,6 +297,7 @@ inertie = st.container()
 correlation = st.container()
 projection = st.container()
 save = st.container()
+
 
 with intro:
     st.title('Analyse en Composantes Principales (ACP)')
