@@ -287,7 +287,7 @@ def get_data(path, sep=';'):
         except:
             data = pd.read_excel(path, header=0)               
     else:
-        data =  pd.DataFrame(data = 10*np.random.rand(1000,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
+        data =  pd.DataFrame(data = 10*np.random.rand(250,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
     
     return data
 
