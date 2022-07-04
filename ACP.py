@@ -14,6 +14,7 @@ from heatmap import corrplot
 from sklearn.decomposition import PCA
 from os import remove
 from io import BytesIO
+from copy import copy
 import warnings
 warnings.filterwarnings('ignore')
     
@@ -282,7 +283,7 @@ class ACP(object):
 @st.cache
 def get_data(path, sep=';'):
     if path is not None:
-        path_clone = path
+        path_clone = copy(path)
         try:           
             data = pd.read_csv(path_clone, header=0, sep =str(sep))
         except:
