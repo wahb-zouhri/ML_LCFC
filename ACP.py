@@ -284,7 +284,7 @@ def get_data(path, sep=';'):
     if path is not None:
         try:           
             data = pd.read_csv(path, header=0, sep =str(sep))
-        except ImportError as e:
+        except (ImportError, UnicodeDecodeError) as e:
             print(e)
             data = pd.read_excel(path, header=0)               
     else:
