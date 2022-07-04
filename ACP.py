@@ -286,10 +286,10 @@ def get_data(path, sep=';'):
             data = pd.read_csv(path, header=0, sep =str(sep))
         except:
             data = pd.read_excel(path, header=0)               
-            
-        return data
     else:
-        return pd.DataFrame(data = 10*np.random.rand(200,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
+        data =  pd.DataFrame(data = 10*np.random.rand(1000,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
+    
+    return data
 
 intro = st.container()
 dataset = st.container()
