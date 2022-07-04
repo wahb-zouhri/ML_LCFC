@@ -289,7 +289,7 @@ def get_data(path, sep=';'):
             
         return data
     else:
-        return pd.DataFrame(data = 10*np.random.rand(30,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
+        return pd.DataFrame(data = 10*np.random.rand(200,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
 
 intro = st.container()
 dataset = st.container()
