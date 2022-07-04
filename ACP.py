@@ -293,7 +293,7 @@ class ACP(object):
     
 #     return data
 
-def get_data(path, sep =';'):
+def get_data(path):
     data = pd.read_excel(path, header=0) 
     return data
     
