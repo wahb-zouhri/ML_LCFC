@@ -239,8 +239,6 @@ class ACP(object):
             nom du fichier jpg enregistré contenant le cercle de corrélation et la projection des données.
         nom_fig3 : str
             nom du fichier jpg enregistré contenant la matrice de corrélation.
-        nom_fichier : str, optional
-            nom du fichier excel à générer. La valeur par défaut est 'Résultats_ACP'.
 
         Returns
         -------
@@ -283,10 +281,10 @@ class ACP(object):
 @st.cache
 def get_data(path, sep=';'):
     if path is not None:
-        try:           
-            data = pd.read_excel(path, header=0) 
+        try:
+            data = pd.read_csv(path, header=0, sep =str(sep)) 
         except:
-            data = pd.read_csv(path, header=0, sep =str(sep))           
+            data = pd.read_excel(path, header=0)
     else:
         data =  pd.DataFrame(data = 10*np.random.rand(250,10), columns = ["P"+str(i) for i in range(1,11)]) # random data so the app can run when no data are provided
     
